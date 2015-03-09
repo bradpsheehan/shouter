@@ -1,0 +1,18 @@
+<div class="container">
+  <%= form_for Shout.new do |form| %>
+    <div class="form-inputs">
+      <%= form.label :shout %>
+      <%= form.fields_for(:content) do |content_form| %>
+        <%= content_form.text_field :body, placeholder: "Shout here!", class: 'form-control' %>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.submit "Shout", class: 'btn btn-success' %>
+    </div>
+  <% end %>
+
+  <div class="shout-feed">
+    <%= render @dashboard.shouts %>
+  </div>
+</div>

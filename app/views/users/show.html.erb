@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="col-md-12">
+    <h1 class="username"><%= @user.username %></h1>
+    <%= follow_button(@user) %>
+  </div>
+
+  <%= render @shouts %>
+</div>
