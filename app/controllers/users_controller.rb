@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @shouts = @user.shouts
+    @feed = Feed.new(@user.id)
   end
 
   private

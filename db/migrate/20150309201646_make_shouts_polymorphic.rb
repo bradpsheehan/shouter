@@ -17,6 +17,7 @@ class MakeShoutsPolymorphic < ActiveRecord::Migration
         end
 
         dir.down do
+          shout.reload
           shout.update(body: shout.content.body)
         end
       end

@@ -1,8 +1,9 @@
-<div class="container">
-  <div class="col-md-12">
+<%= render 'profile_bar' %>
+<div class="col-md-8 content-well">
+  <div class="profile-header">
     <h1 class="username"><%= @user.username %></h1>
     <%= follow_button(@user) %>
   </div>
 
-  <%= render @shouts %>
+  <%= render @feed %>
 </div>

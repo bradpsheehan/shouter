@@ -1,5 +1,10 @@
 <%= div_for(shout) do %>
-  <%= link_to shout.username, shout.user %>
-  <%= time_ago_in_words shout.created_at %> ago
-  <%= render shout.content %>
+  <div class="row">
+    <div class="col-md-12 shout">
+      <%= link_to shout.username, shout.user %>
+      <%= time_ago_in_words shout.created_at %> ago
+      <%= render shout.content %>
+      <%= reshout_button(shout) %>
+    </div>
+  </div>
 <% end %>

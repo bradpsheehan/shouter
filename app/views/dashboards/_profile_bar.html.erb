@@ -1,0 +1,5 @@
+<div class="col-md-3 content-well profile-bar">
+  <h4><%= current_user.username %></h4>
+  Following: <%= current_user.followed_users.count %>
+  Followers: <%= current_user.followers.count %>
+</div>

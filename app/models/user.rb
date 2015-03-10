@@ -33,4 +33,22 @@ class User < ActiveRecord::Base
     followed_users.where(id: user.id).exists?
   end
 
+  def reshout(shout)
+    reshout = shout.new_reshout
+    shouts.create(content: reshout)
+  end
+
+  def undo_reshout(shout)
+    reshouts = shout.reshouts
+    shouts.where(id: reshouts).destroy_all
+  end
+
+  def reshouted?(shout)
+    shouts.reshouts_for(shout).exists?
+  end
+
+  def owns?(object)
+    object.user_id == id
+  end
+
 end

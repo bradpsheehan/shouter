@@ -9,7 +9,12 @@ Shouter::Application.routes.draw do
   root 'welcome#index'
 
   resource :session, only: [:new, :create, :destroy]
-  resources :shouts, only: [:create]
+  resources :shouts, only: [:create] do
+    member do
+      post 'reshout' => 'reshouts#create'
+      delete 'unreshout' => 'reshouts#destroy'
+    end
+  end
   resources :users, only: [:new, :create, :show] do
     member do
       post 'follow' => 'following_relationships#create'
