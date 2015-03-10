@@ -7,6 +7,7 @@ Shouter::Application.routes.draw do
   end
 
   root 'welcome#index'
+  resource :search, only: [:show]
 
   resource :session, only: [:new, :create, :destroy]
   resources :shouts, only: [:create] do
